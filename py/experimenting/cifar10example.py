@@ -18,7 +18,7 @@ import onnx
 
 batch_size = 32
 nb_classes = 10
-nb_epoch = 2#00
+nb_epoch = 200
 data_augmentation = False
 
 # input image dimensions
@@ -105,5 +105,5 @@ else:
 
 
 onnx_model = keras2onnx.convert_keras(model, model.name)
-temp_model_file = 'model1.onnx'
+temp_model_file = '..//onnx_models//cifar10X.onnx'
 onnx.save_model(onnx_model, temp_model_file)

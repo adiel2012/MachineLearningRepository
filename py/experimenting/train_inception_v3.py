@@ -1,17 +1,6 @@
 from train_model import train_classification_model
 import keras
-#from keras_applications.inception_v3 import InceptionV3
-
-
-
-#InceptionV3(include_top=True,
-#                weights='imagenet',
-#                input_tensor=None,
-#                input_shape=None,
-#                pooling=None,
-#                classes=1000,
-#                **kwargs):
-
+ras_applications.inception_v3 import InceptionV3
 
 batch_size = 5
 nb_classes = 10
@@ -23,10 +12,7 @@ data_augmentation = False
 reshapeTo = (75, 75)
 #https://keras.io/applications/#inceptionv3
 
-
 model = keras.applications.inception_v3.InceptionV3(include_top=True, weights=None, input_tensor=None, input_shape=(75, 75, 3), pooling=None, classes=nb_classes)
-
-
 train_classification_model(model, 'cifar10', batch_size, nb_classes, nb_epoch, img_rows, img_cols, img_channels, data_augmentation, reshapeTo = reshapeTo)
 
 print('FIN')
