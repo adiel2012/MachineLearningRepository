@@ -5,3 +5,5 @@ ONNX/DotnetApp1/images/yolov3/perros2.jpg
 ONNX/DotnetApp1/images/yolov3/comprender_a_tu_perro.jpg
 keras-applications-master/tests/data/elephant.jpg
 ONNX/DotnetApp1/obj/Debug/netcoreapp3.0/*
+py/tests/data/elephant.jpg
+onnx_models/*

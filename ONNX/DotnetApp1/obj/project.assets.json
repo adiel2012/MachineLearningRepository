@@ -5999,11 +5999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Adiel\\trabajos\\ONNX\\app2\\app2.csproj",
+      "projectUniqueName": "D:\\Adiel\\trabajos\\MachineLearningRepository\\MachineLearningRepository\\ONNX\\DotnetApp1\\app2.csproj",
       "projectName": "app2",
-      "projectPath": "D:\\Adiel\\trabajos\\ONNX\\app2\\app2.csproj",
+      "projectPath": "D:\\Adiel\\trabajos\\MachineLearningRepository\\MachineLearningRepository\\ONNX\\DotnetApp1\\app2.csproj",
       "packagesPath": "C:\\Users\\Adiel\\.nuget\\packages\\",
-      "outputPath": "D:\\Adiel\\trabajos\\ONNX\\app2\\obj\\",
+      "outputPath": "D:\\Adiel\\trabajos\\MachineLearningRepository\\MachineLearningRepository\\ONNX\\DotnetApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
