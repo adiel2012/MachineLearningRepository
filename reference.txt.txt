@@ -1,0 +1,2 @@
+https://github.com/spmallick/learnopencv
+https://github.com/keras-team/keras-applications
