@@ -6,7 +6,12 @@
 > python -m venv virtual_enviroment<br/>
 > .\virtual_enviroment\Scripts\activate.bat<br/>
 > python -m pip install --upgrade pip<br/>
-> pip install -r requirements.txt<br/>
+> pip install tensorflow<br/>
+> pip install --upgrade setuptools<br/>
+> pip install tf-nightly<br/>
+> pip install keras<br/>
+> pip install pillow<br/>
+> pip install onnxruntime<br/>
 
 
 <b>Running cifar10 simple example</b><br/>
