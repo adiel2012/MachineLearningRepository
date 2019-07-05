@@ -12,7 +12,7 @@
 > pip install keras<br/>
 > pip install pillow<br/>
 > pip install onnxruntime<br/>
-
+> pip install keras2onnx
 
 <b>Running cifar10 simple example</b><br/>
 > cd py<br/>
