@@ -18,3 +18,7 @@
 > cd py<br/>
 > experimenting\cifar10example.py<br/>
 It creates and train a model of CNN and save it at '..//onnx_models//cifar10X.onnx'<br/>
+
+
+<b>Running cifar10 trainning with inception v3</b><br/>
+To be included<br/>
