@@ -5,8 +5,9 @@
 > pip install virtualenv<br/>
 > python -m venv virtual_enviroment<br/>
 > .\virtual_enviroment\Scripts\activate.bat<br/>
-> pip install -r requirements.txt<br/>
 > python -m pip install --upgrade pip<br/>
+> pip install -r requirements.txt<br/>
+
 
 <b>Running cifar10 simple example</b><br/>
 > cd py<br/>
