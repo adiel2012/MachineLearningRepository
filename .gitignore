@@ -7,3 +7,4 @@ keras-applications-master/tests/data/elephant.jpg
 ONNX/DotnetApp1/obj/Debug/netcoreapp3.0/*
 py/tests/data/elephant.jpg
 onnx_models/*
+virtual_enviroment/*
