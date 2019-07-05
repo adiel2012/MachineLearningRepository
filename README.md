@@ -16,5 +16,5 @@
 
 <b>Running cifar10 simple example</b><br/>
 > cd py<br/>
-> py\experimenting\cifar10example.py<br/>
+> experimenting\cifar10example.py<br/>
 It creates and train a model of CNN and save it at '..//onnx_models//cifar10X.onnx'<br/>
