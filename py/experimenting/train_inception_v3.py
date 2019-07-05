@@ -1,6 +1,5 @@
 from train_model import train_classification_model
 import keras
-ras_applications.inception_v3 import InceptionV3
 
 batch_size = 5
 nb_classes = 10

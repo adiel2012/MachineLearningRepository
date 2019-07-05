@@ -15,21 +15,10 @@ from keras.utils import np_utils
 import keras2onnx
 import onnxruntime
 import onnx
-from load_datasets import loadDS
+from train_model import getdata
+import os, sys
 import numpy as np
 
-def getdata():
-    (x, y) = loadDS('D:\\Adiel\\trabajos\\MachinLearningRepository\\datasets\\cifar10\\train\\')
-    (xt, yt) = loadDS('D:\\Adiel\\trabajos\\MachinLearningRepository\\datasets\\cifar10\\test\\')
-    x = np.array(x, dtype=np.uint8)
-    y = list(map(lambda i : [i], y))
-    y = np.array(y, dtype=np.uint8)
-
-    xt = np.array(xt, dtype=np.uint8)
-    yt = list(map(lambda i : [i], yt))
-    yt = np.array(yt, dtype=np.int32)
-
-    return ((x, y),(xt, yt))
 
 batch_size = 32
 nb_classes = 10
@@ -41,8 +30,10 @@ img_rows, img_cols = 32, 32
 # The CIFAR10 images are RGB.
 img_channels = 3
 
+dataset_name = 'cifar10'
+
 # The data, shuffled and split between train and test sets:
-(X_train, y_train), (X_test, y_test) =  getdata() # cifar10.load_data()
+(X_train, y_train), (X_test, y_test) =  getdata(dataset_name) # cifar10.load_data()
 
 #(X_train1, y_train1), (X_test1, y_test1)= getdata()
 
