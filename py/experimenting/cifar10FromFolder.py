@@ -118,5 +118,5 @@ else:
 
 
 onnx_model = keras2onnx.convert_keras(model, model.name)
-temp_model_file = 'model1.onnx'
+temp_model_file = 'cifar10model1.onnx'
 onnx.save_model(onnx_model, temp_model_file)

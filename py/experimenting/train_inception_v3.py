@@ -1,5 +1,7 @@
 from train_model import train_classification_model
 import keras
+import onnx
+import keras2onnx
 
 batch_size = 5
 nb_classes = 10
@@ -13,5 +15,9 @@ reshapeTo = (75, 75)
 
 model = keras.applications.inception_v3.InceptionV3(include_top=True, weights=None, input_tensor=None, input_shape=(75, 75, 3), pooling=None, classes=nb_classes)
 train_classification_model(model, 'cifar10', batch_size, nb_classes, nb_epoch, img_rows, img_cols, img_channels, data_augmentation = True, reshapeTo = reshapeTo,  featurewise_center=True, samplewise_center=True,  featurewise_std_normalization=True,  samplewise_std_normalization=True)
+
+onnx_model = keras2onnx.convert_keras(model, model.name)
+temp_model_file = '..//onnx_models//cifar10_inception_v3.onnx'
+onnx.save_model(onnx_model, temp_model_file)
 
 print('FIN')
