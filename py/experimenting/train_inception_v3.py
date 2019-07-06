@@ -5,7 +5,7 @@ import keras2onnx
 
 batch_size = 5
 nb_classes = 10
-nb_epoch = 200
+nb_epoch = 2#00
 img_rows = 32
 img_cols = 32
 img_channels = 3
