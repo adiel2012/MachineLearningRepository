@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Jul 07 00:26:02 EDT 2019
+stanford-corenlp-3.9.2-javadoc.jar>central=
+stanford-corenlp-3.9.2-sources.jar>central=
+stanford-corenlp-3.9.2-models.jar>central=
+stanford-corenlp-3.9.2.jar>central=
+stanford-corenlp-3.9.2.pom>central=
+stanford-corenlp-3.9.2-models-chinese.jar>central=
