@@ -8,3 +8,6 @@ ONNX/DotnetApp1/obj/Debug/netcoreapp3.0/*
 py/tests/data/elephant.jpg
 onnx_models/*
 virtual_enviroment/*
+java/StanfordNPLCore/corenpl1/target/corenpl1-corenpl1.jar
+java/StanfordNPLCore/corenpl1/target/test-classes/corenpl1/AppTest.class
+*.class
