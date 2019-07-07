@@ -31,3 +31,9 @@ It creates and train a model of CNN and save it at '..//onnx_models//cifar10_inc
 
 <b>.NetCore 3.0 app using cifar10X.onnx</b><br/>
 To be included<br/>
+
+<b>Object detection with Yolov3(trainning and using model)</b><br/>
+To be included<br/>
+
+<b>Natural language processing (NLP)</b><br/>
+To be included<br/>
