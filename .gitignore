@@ -12,3 +12,5 @@ java/StanfordNPLCore/corenpl1/target/corenpl1-corenpl1.jar
 java/StanfordNPLCore/corenpl1/target/test-classes/corenpl1/AppTest.class
 *.class
 java/StanfordNPLCore/corenpl1/target/acmartifactid-1.0-SNAPSHOT-jar-with-dependencies.jar
+cpp/yolov3/Yolov3/Debug/*
+cpp/yolov3/Yolov3/.vs/Yolov3/v16/*
