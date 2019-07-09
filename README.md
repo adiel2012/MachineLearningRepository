@@ -1,5 +1,6 @@
 # MachineLearningRepository
 <b>Installation</b><br/>
+Python enviroment<br/>
 > git clone https://github.com/adiel2012/MachineLearningRepository.git<br/>
 > cd MachineLearningRepository<br/>
 > pip install virtualenv<br/>
@@ -32,7 +33,7 @@ It creates and train a model of CNN and save it at '..//onnx_models//cifar10_inc
 <b>.NetCore 3.0 app using cifar10X.onnx</b><br/>
 To be included<br/>
 
-<b>Object detection with Yolov3(trainning and using model)</b><br/>
+<b>Object detection with Yolov3(trainning and using model Opencv+Cpp)</b><br/>
 To be included<br/>
 
 <b>Natural language processing (NLP)</b><br/>
