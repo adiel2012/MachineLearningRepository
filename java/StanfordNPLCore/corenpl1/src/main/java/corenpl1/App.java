@@ -17,10 +17,15 @@ public class App
 {
     public static void main( String[] args )
     {
+        if(args == null || args.length == 0)
+        {
+            System.out.println("Empty parameters");
+            return;
+        }
         // build in this way   mvn clean compile assembly:single
         //   java -jar target\acmartifactid-1.0-SNAPSHOT-jar-with-dependencies.jar
         init();
-        String[] sentences = new String[]{"It is a Beautiful Day", "this is the worst day of my life"};
+        String[] sentences = args;
 
         for(String str : sentences)
         {
@@ -50,18 +55,25 @@ public class App
     }
   
     public static int findSentiment(String text) {
- 
+        System.out.println(text);
+        System.out.println(pipeline.getClass());
         int mainSentiment = 0;
         if (text != null && text.length() > 0) {
             int longest = 0;
             Annotation annotation = pipeline.process(text);
-            for (CoreMap sentence : annotation
-                    .get(CoreAnnotations.SentencesAnnotation.class)) {
-                Tree tree = sentence
-                        .get(SentimentCoreAnnotations.SentimentAnnotatedTree.class);
-                int sentiment = RNNCoreAnnotations.getPredictedClass(tree);
+            List<CoreMap> ops = annotation.get(CoreAnnotations.SentencesAnnotation.class);
+            if(ops != null)
+            for (CoreMap sentence : ops) {
+                if(sentence == null)
+                    continue;
+                Tree tree = sentence.get(SentimentCoreAnnotations.SentimentAnnotatedTree.class);
+                if(tree == null)
+                    continue;
+                int sentiment = RNNCoreAnnotations.getPredictedClass(tree);                
                 String partText = sentence.toString();
+                
                 if (partText.length() > longest) {
+                    
                     mainSentiment = sentiment;
                     longest = partText.length();
                 }

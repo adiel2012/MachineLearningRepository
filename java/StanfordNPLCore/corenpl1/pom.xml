@@ -37,6 +37,19 @@
     <version>3.9.2</version>
     <classifier>models</classifier>
 </dependency>
+
+   <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.21</version> <!-- or use LATEST -->
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.21</version> <!-- or use LATEST -->
+    </dependency>
+   
+
   </dependencies>
 
   <build>
