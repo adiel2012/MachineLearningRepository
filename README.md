@@ -36,6 +36,6 @@ To be included<br/>
 To be included<br/>
 
 <b>Natural language processing (NLP)</b><br/>
-> cd cd java/StanfordNPLCore/corenpl1
-> mvn clean compile assembly:single
-> java -jar acmartifactid-1.0-SNAPSHOT-jar-with-dependencies.jar<br/>
+> cd cd java/StanfordNPLCore/corenpl1<br/>
+> mvn clean compile assembly:single<br/>
+> java -jar acmartifactid-1.0-SNAPSHOT-jar-with-dependencies.jar "paragraph one" "paragraph 2"<br/>
