@@ -8,9 +8,9 @@
 namespace fs = std::filesystem;
 
 //
-//wget https ://pjreddie.com/media/files/yolov3.weights
-//wget https ://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true -O ./yolov3.cfg
-//wget https ://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true -O ./coco.names
+//wget https://pjreddie.com/media/files/yolov3.weights
+//wget https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true -O ./yolov3.cfg
+//wget https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true -O ./coco.names
 
 #include <fstream>
 #include <sstream>
@@ -49,7 +49,7 @@ vector<String> getOutputsNames(const Net& net);
 int main(int argc, char** argv)
 {
 
-
+	cv::Mat outImg;
 	cv::VideoCapture cap;
 	cap.open(0);
 
@@ -72,14 +72,14 @@ int main(int argc, char** argv)
 	string base_url = std::filesystem::current_path().string() + "\\";
 
 
-	string classesFile = base_url+"coco.names";
+	string classesFile = base_url + "coco.names";
 	ifstream ifs(classesFile.c_str());
 	string line;
 	while (getline(ifs, line)) classes.push_back(line);
 
 	// Give the configuration and weight files for the model
-	String modelConfiguration = base_url+"yolov3.cfg";
-	String modelWeights = base_url+"yolov3.weights";
+	String modelConfiguration = base_url + "yolov3.cfg";
+	String modelWeights = base_url + "yolov3.weights";
 
 	// Load the network
 	Net net = readNetFromDarknet(modelConfiguration, modelWeights);
@@ -97,23 +97,23 @@ int main(int argc, char** argv)
 	//	outputFile = "yolo_out_cpp.avi";
 	//	if (parser.has("image"))
 	//	{
-	//		// Open the image file
-	//		str = parser.get<String>("image");
-	//		ifstream ifile(str);
-	//		if (!ifile) throw("error");
-	//		cap.open(str);
-	//		str.replace(str.end() - 4, str.end(), "_yolo_out_cpp.jpg");
-	//		outputFile = str;
+	//	// Open the image file
+	//	str = parser.get<String>("image");
+	//	ifstream ifile(str);
+	//	if (!ifile) throw("error");
+	//	cap.open(str);
+	//	str.replace(str.end() - 4, str.end(), "_yolo_out_cpp.jpg");
+	//	outputFile = str;
 	//	}
 	//	else if (parser.has("video"))
 	//	{
-	//		// Open the video file
-	//		str = parser.get<String>("video");
-	//		ifstream ifile(str);
-	//		if (!ifile) throw("error");
-	//		cap.open(str);
-	//		str.replace(str.end() - 4, str.end(), "_yolo_out_cpp.avi");
-	//		outputFile = str;
+	//	// Open the video file
+	//	str = parser.get<String>("video");
+	//	ifstream ifile(str);
+	//	if (!ifile) throw("error");
+	//	cap.open(str);
+	//	str.replace(str.end() - 4, str.end(), "_yolo_out_cpp.avi");
+	//	outputFile = str;
 	//	}
 	//	// Open the webcaom
 	//	else cap.open(parser.get<int>("device"));
@@ -126,12 +126,12 @@ int main(int argc, char** argv)
 
 	// Get the video writer initialized to save the output video
 	/*if (!parser.has("image")) {
-		video.open(outputFile, VideoWriter::fourcc('M', 'J', 'P', 'G'), 28, Size(cap.get(CAP_PROP_FRAME_WIDTH), cap.get(CAP_PROP_FRAME_HEIGHT)));
+	video.open(outputFile, VideoWriter::fourcc('M', 'J', 'P', 'G'), 28, Size(cap.get(CAP_PROP_FRAME_WIDTH), cap.get(CAP_PROP_FRAME_HEIGHT)));
 	}*/
 
 	// Create a window
 	static const string kWinName = "Deep learning object detection in OpenCV";
-	namedWindow(kWinName, WINDOW_NORMAL);
+	namedWindow(kWinName);
 
 
 	for (;;)
@@ -170,7 +170,10 @@ int main(int argc, char** argv)
 		if (parser.has("image")) imwrite(outputFile, detectedFrame);
 		else video.write(detectedFrame);
 
+		//cv::resize(frame, outImg, cv::Size(), 3, 3);
 		imshow(kWinName, frame);
+
+		if (waitKey(30) >= 0) break;
 
 	}
 
