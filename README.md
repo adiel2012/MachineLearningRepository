@@ -20,8 +20,8 @@ Python enviroment<br/>
 > experimenting\cifar10example.py<br/>
 It creates and train a model of CNN and save it at '..//onnx_models//cifar10X.onnx'<br/>
 Data distribution:<br/>
-&nbspMean: [[[125.3069  122.95015 113.866  ]]]<br/>
-&nbspStd:  [[[62.993256 62.08861  66.705   ]]]<br/>
+&nbsp;Mean: [[[125.3069  122.95015 113.866  ]]]<br/>
+&nbsp;Std:  [[[62.993256 62.08861  66.705   ]]]<br/>
 
 <b>Running cifar10 trainning using images from folder</b><br/>
 > cd py<br/>
