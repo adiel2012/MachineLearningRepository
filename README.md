@@ -34,7 +34,14 @@ It creates and train a model of CNN and save it at '..//onnx_models//cifar10_inc
 To be included<br/>
 
 <b>Object detection with Yolov3(trainning and using model Opencv+Cpp)</b><br/>
-To be included<br/>
+This project detect object using the algorithm Yolov3 using a camara<br/>
+It needs th following files:<br/>
+<ul>
+  <li>https://pjreddie.com/media/files/yolov3.weights</li>
+  <li>https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true</li>
+  <li>https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true</li>
+</ul>
+> cd cpp/yolov3/Yolov3<br/>
 
 <b>Natural language processing (NLP)</b><br/>
 Sentiment Analysis (StanfordNPLCore Java)<br/>
