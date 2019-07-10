@@ -27,7 +27,7 @@ import onnxruntime
 import onnx
 import numpy as np
 
-batch_size = 64
+batch_size = 32
 nb_classes = 10
 nb_epoch = 200
 cf = True
@@ -59,38 +59,28 @@ Y_test = np_utils.to_categorical(y_test, nb_classes)
 #print("aMean: ")
 #print(std)
 
-baseMapNum = 32
-weight_decay = 1e-4
 model = Sequential()
-model.add(Conv2D(baseMapNum, (3,3), padding='same', kernel_regularizer=regularizers.l2(weight_decay), input_shape=X_train.shape[1:]))
+model.add(Conv2D(32, (3, 3), padding='same',
+                 input_shape=X_train.shape[1:]))
 model.add(Activation('relu'))
-model.add(BatchNormalization())
-model.add(Conv2D(baseMapNum, (3,3), padding='same', kernel_regularizer=regularizers.l2(weight_decay)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
-model.add(BatchNormalization())
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.2))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
 
-model.add(Conv2D(2*baseMapNum, (3,3), padding='same', kernel_regularizer=regularizers.l2(weight_decay)))
+model.add(Conv2D(64, (3, 3), padding='same'))
 model.add(Activation('relu'))
-model.add(BatchNormalization())
-model.add(Conv2D(2*baseMapNum, (3,3), padding='same', kernel_regularizer=regularizers.l2(weight_decay)))
+model.add(Conv2D(64, (3, 3)))
 model.add(Activation('relu'))
-model.add(BatchNormalization())
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.3))
-
-model.add(Conv2D(4*baseMapNum, (3,3), padding='same', kernel_regularizer=regularizers.l2(weight_decay)))
-model.add(Activation('relu'))
-model.add(BatchNormalization())
-model.add(Conv2D(4*baseMapNum, (3,3), padding='same', kernel_regularizer=regularizers.l2(weight_decay)))
-model.add(Activation('relu'))
-model.add(BatchNormalization())
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.4))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
 
 model.add(Flatten())
-model.add(Dense(nb_classes, activation='softmax'))
+model.add(Dense(512))
+model.add(Activation('relu'))
+model.add(Dropout(0.5))
+model.add(Dense(nb_classes))
+model.add(Activation('softmax'))
 
 model.summary()
 # Let's train the model using RMSprop
@@ -117,12 +107,12 @@ else:
     print('Using real-time data augmentation.')
     # This will do preprocessing and realtime data augmentation:
     datagen = ImageDataGenerator(
-        featurewise_center=True,  # set input mean to 0 over the dataset
+        featurewise_center=False,  # set input mean to 0 over the dataset
         samplewise_center=False,  # set each sample mean to 0
-        featurewise_std_normalization=True,  # divide inputs by std of the dataset
+        featurewise_std_normalization=False,  # divide inputs by std of the dataset
         samplewise_std_normalization=False,  # divide each input by its std
         zca_whitening=False,  # apply ZCA whitening
-        rotation_range=15,  # randomly rotate images in the range (degrees, 0 to 180)
+        rotation_range=0,  # randomly rotate images in the range (degrees, 0 to 180)
         width_shift_range=0.1,  # randomly shift images horizontally (fraction of total width)
         height_shift_range=0.1,  # randomly shift images vertically (fraction of total height)
         horizontal_flip=True,  # randomly flip images
