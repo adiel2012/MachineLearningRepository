@@ -43,8 +43,8 @@ It needs th following files:<br/>
   <li>https://pjreddie.com/media/files/yolov3.weights</li>
   <li>https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true</li>
   <li>https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true</li>
-</ul><br/>
-> cd cpp/yolov3/Yolov3<br/>
+</ul>
+> cd cpp/yolov3/Yolov3<br/><br/>
 
 <b>Natural language processing (NLP)</b><br/>
 Sentiment Analysis (StanfordNPLCore Java)<br/>
