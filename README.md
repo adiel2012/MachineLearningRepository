@@ -43,7 +43,7 @@ It needs th following files:<br/>
   <li>https://pjreddie.com/media/files/yolov3.weights</li>
   <li>https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true</li>
   <li>https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true</li>
-</ul>
+</ul><br/>
 > cd cpp/yolov3/Yolov3<br/>
 
 <b>Natural language processing (NLP)</b><br/>
